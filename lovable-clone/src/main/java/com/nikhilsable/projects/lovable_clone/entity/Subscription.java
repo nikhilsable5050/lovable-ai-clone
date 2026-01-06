@@ -10,17 +10,20 @@ import java.time.Instant;
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class User {
+public class Subscription {
 
-    Long user;
+    Long id;
+    User user;
+    Plan plan;
+    String stripeCustomerId;
+    String stripeSubscriptionId;
 
-    String email;
-    String passwordHash;
-    String avatarUrl;
+    Instant currentPeriodStart;
+    Instant currentPeriodEnd;
+    Boolean cancelAtPeriodEnd;
 
     Instant createdAt;
     Instant updatedAt;
-    Instant deletedAt; //soft delete
 
 
 }
